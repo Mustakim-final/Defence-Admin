@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Admin_post_image_slider_Activity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/admin_choseImage_ID"
+        android:text="choice image">
+
+    </Button>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:id="@+id/admin_imageView_ID"
+        android:layout_marginTop="10dp"
+        android:layout_height="300dp">
+
+    </ImageView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/progressBar_ID"
+        android:layout_weight="0.16"
+        android:layout_height="wrap_content">
+
+    </ProgressBar>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.17"
+        android:id="@+id/admin_image_saveBtn_ID"
+        android:text="save image">
+
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.17"
+        android:id="@+id/laodBtn_ID"
+        android:text="Display image">
+    </Button>
+
+
+
+</LinearLayout>

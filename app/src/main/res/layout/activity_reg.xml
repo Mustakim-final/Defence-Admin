@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegActivity">
+
+    <include
+        android:id="@+id/tool_bar_ID"
+        layout="@layout/bar_layout">
+
+    </include>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="FInd Doctor">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/name_editText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:hint="Name">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_toRightOf="@+id/name_editText"
+                android:hint="Age">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/genderEditText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_editText"
+                android:layout_marginTop="10dp"
+                android:hint="Gender">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/phoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ageEditText"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/genderEditText"
+                android:hint="Phone">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/addressEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/genderEditText"
+                android:layout_marginTop="10dp"
+                android:hint="Address">
+
+            </EditText>
+
+
+
+            <EditText
+                android:id="@+id/informationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressEditText"
+                android:layout_marginTop="10dp"
+                android:hint="Write your sort profile...">
+
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/cvBtn_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/informationEditText"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_baseline_image_24">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": CV"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_below="@id/informationEditText"
+                android:layout_toRightOf="@+id/cvBtn_ID"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="9dp"
+                >
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/userName_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvBtn_ID"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="User Name">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/user_gmail_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userName_ID"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Enter Gmail...">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/user_password_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_gmail_ID"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Password..."
+                android:inputType="textPassword">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/regSubBtn_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_password_ID"
+                android:layout_marginTop="10dp"
+                android:text="submit">
+
+            </Button>
+
+            <TextView
+                android:id="@+id/goSignIn_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/regSubBtn_ID"
+                android:gravity="center"
+                android:text="Are You Already sign Up? go to sign in"
+                android:textSize="15sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <ProgressBar
+                android:id="@+id/progressBar_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/regSubBtn_ID"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="176dp"
+                android:layout_marginBottom="91dp"
+                android:visibility="visible">
+
+            </ProgressBar>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

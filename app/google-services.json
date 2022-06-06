@@ -1,0 +1,164 @@
+{
+  "project_info": {
+    "project_number": "341986375848",
+    "firebase_url": "https://fast-65968-default-rtdb.firebaseio.com",
+    "project_id": "fast-65968",
+    "storage_bucket": "fast-65968.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341986375848:android:c97d08b43f916d91162a9d",
+        "android_client_info": {
+          "package_name": "com.example.doctorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79U0YNf6KAqf5wk4L-MfXtGV5mrNGYTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341986375848:android:f28b38e6470fc37c162a9d",
+        "android_client_info": {
+          "package_name": "com.example.finddoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79U0YNf6KAqf5wk4L-MfXtGV5mrNGYTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341986375848:android:048534fc59471706162a9d",
+        "android_client_info": {
+          "package_name": "com.example.finddoctorr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341986375848-pgit791rflhfndh7puqstkordt7i75et.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finddoctorr",
+            "certificate_hash": "4615170a7d86e197ca4b74b0cc737d72b81ee891"
+          }
+        },
+        {
+          "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79U0YNf6KAqf5wk4L-MfXtGV5mrNGYTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341986375848:android:14035b40e4f7276b162a9d",
+        "android_client_info": {
+          "package_name": "com.example.quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79U0YNf6KAqf5wk4L-MfXtGV5mrNGYTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341986375848:android:341d426dd254c708162a9d",
+        "android_client_info": {
+          "package_name": "com.exappample.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79U0YNf6KAqf5wk4L-MfXtGV5mrNGYTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341986375848-lg8v3l4e3s0edg0lp3s0nv3am548vnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
