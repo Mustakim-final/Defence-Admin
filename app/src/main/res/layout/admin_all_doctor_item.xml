@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/admin_doctor_profile_image_ID"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/ic_launcher_round">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/admin_doctor_profile_name_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="35dp"
+        android:layout_toEndOf="@id/admin_doctor_profile_image_ID"
+        android:layout_toRightOf="@+id/admin_doctor_profile_image_ID"
+        android:text="username">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/admin_doctor_degree_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_doctor_profile_name_ID"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="25dp"
+        android:text="degree">
+
+    </TextView>
+
+</RelativeLayout>

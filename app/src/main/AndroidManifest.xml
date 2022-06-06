@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoctorApp">
-
+        <activity
+            android:name=".Admin_allDoctor_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Doctor_MainActivity"
+            android:exported="false" />
         <activity
             android:name=".Admin_post_image_slider_Activity"
             android:exported="false" />
@@ -31,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MessageWithPatientMainActivity"
             android:exported="false" />
@@ -47,7 +51,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>

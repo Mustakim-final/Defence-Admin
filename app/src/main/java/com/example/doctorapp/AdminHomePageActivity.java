@@ -21,7 +21,8 @@ public class AdminHomePageActivity extends AppCompatActivity {
         doctorCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(AdminHomePageActivity.this, Admin_Doctor_MainActivity.class);
+                startActivity(intent);
             }
         });
         productCard.setOnClickListener(new View.OnClickListener() {
