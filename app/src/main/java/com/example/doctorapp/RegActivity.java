@@ -218,12 +218,14 @@ public class RegActivity extends AppCompatActivity {
                     hashMap.put("id",userID);
                     hashMap.put("username",username);
                     hashMap.put("gmail",gmail);
+                    hashMap.put("status","status");
                     hashMap.put("imageUrl","imageUrl");
 
                     reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Intent intent=new Intent(RegActivity.this, Home_Doctor_Activity.class);
+                            intent.putExtra("userID",userID);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             Toast.makeText(RegActivity.this,"Registration successfully done",Toast.LENGTH_SHORT).show();

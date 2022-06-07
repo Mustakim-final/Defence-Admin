@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoctorApp">
         <activity
+            android:name=".Doctor_WatingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin_allDoctor_detailsActivity"
             android:exported="false" />
         <activity

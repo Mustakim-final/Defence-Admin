@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.helper.widget.Layer;
@@ -13,13 +14,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doctorapp.Model.All_Doctor;
 import com.example.doctorapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder> {
     Context context;
     List<All_Doctor> all_doctorList;
     String userID;
+    DatabaseReference reference;
 
     public DetailsAdapter(Context context, List<All_Doctor> all_doctorList) {
         this.context = context;
@@ -53,6 +60,23 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder
             super(itemView);
             informationText=itemView.findViewById(R.id.doctorInformation_ID);
             conBtn=itemView.findViewById(R.id.confirm_button_ID);
+
+            conBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    All_Doctor users=all_doctorList.get(getAdapterPosition());
+                    userID=users.getId();
+
+                    reference= FirebaseDatabase.getInstance().getReference("Doctor List").child(userID);
+                    HashMap<String,Object> hashMap=new HashMap<>();
+                    hashMap.put("status","yes");
+                    reference.updateChildren(hashMap);
+
+
+
+                    Toast.makeText(context, ""+userID, Toast.LENGTH_LONG).show();
+                }
+            });
         }
     }
 }

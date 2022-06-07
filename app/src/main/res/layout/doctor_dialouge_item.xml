@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Doctor"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/admin_doctor_image_ID"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/title_ID"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+
+    <EditText
+        android:id="@+id/admin_doctor_information_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_doctor_image_ID"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="information...">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/admin_doctor_day_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_doctor_information_ID"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Set day">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/admin_doctor_payment_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_doctor_day_ID"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Fee...">
+
+    </EditText>
+
+
+    <Button
+        android:id="@+id/admin_doctor_submit_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_doctor_payment_ID"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="update"
+        android:textSize="18sp">
+
+    </Button>
+
+</RelativeLayout>

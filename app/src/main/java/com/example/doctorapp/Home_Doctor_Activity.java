@@ -14,9 +14,11 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.doctorapp.Fragment.ChatFragment;
 import com.example.doctorapp.Fragment.PrescriptionReFragment;
 import com.example.doctorapp.Fragment.UserFragment;
+import com.example.doctorapp.Model.All_Doctor;
 import com.example.doctorapp.Model.Users;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,9 +31,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Home_Doctor_Activity extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
 
-    private TextView username;
+public class Home_Doctor_Activity extends AppCompatActivity {
+    CircleImageView profileImage;
+    private TextView myname;
     FirebaseUser firebaseUser;
     DatabaseReference reference;
     FirebaseAuth firebaseAuth;
@@ -43,15 +47,25 @@ public class Home_Doctor_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        username=findViewById(R.id.userNameBar_ID);
+        profileImage=findViewById(R.id.doctorProfile_ID);
+        myname=findViewById(R.id.doctorName_ID);
+
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Doctor List").child(firebaseUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Users users=snapshot.getValue(Users.class);
-                username.setText(users.getUsername());
+                All_Doctor all_doctor=snapshot.getValue(All_Doctor.class);
+
+                myname.setText(all_doctor.getName());
+
+                if (all_doctor.getImageUrl().equals("imageUrl")){
+                    profileImage.setImageResource(R.drawable.ic_baseline_perm_identity_24);
+
+                }else {
+                    Glide.with(getApplicationContext()).load(all_doctor.getImageUrl()).into(profileImage);
+                }
             }
 
             @Override
@@ -64,9 +78,11 @@ public class Home_Doctor_Activity extends AppCompatActivity {
         viewPager=findViewById(R.id.viewPager_ID);
 
         FragmentPager fragmentPager=new FragmentPager(getSupportFragmentManager());
-        fragmentPager.addFragment(new ChatFragment(),"Chat");
-        fragmentPager.addFragment(new UserFragment(),"User");
-        fragmentPager.addFragment(new PrescriptionReFragment(),"Prescription");
+
+        fragmentPager.addFragment(new PrescriptionReFragment(),"প্রেসক্রিপশন");
+        fragmentPager.addFragment(new UserFragment(),"user");
+        fragmentPager.addFragment(new ChatFragment(),"প্রোফাইল");
+
         viewPager.setAdapter(fragmentPager);
         tabLayout.setupWithViewPager(viewPager);
 

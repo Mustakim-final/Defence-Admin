@@ -1,12 +1,12 @@
 package com.example.doctorapp.Model;
 
 public class All_Doctor {
-    String name,information,age,gender,phone,address,id,username,gmail,imageUrl;
+    String name,information,age,gender,phone,address,id,username,gmail,imageUrl,status;
 
     public All_Doctor() {
     }
 
-    public All_Doctor(String name, String information, String age, String gender, String phone, String address, String id, String username, String gmail, String imageUrl) {
+    public All_Doctor(String name, String information, String age, String gender, String phone, String address, String id, String username, String gmail, String imageUrl, String status) {
         this.name = name;
         this.information = information;
         this.age = age;
@@ -17,6 +17,7 @@ public class All_Doctor {
         this.username = username;
         this.gmail = gmail;
         this.imageUrl = imageUrl;
+        this.status=status;
     }
 
     public String getName() {
@@ -97,5 +98,13 @@ public class All_Doctor {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

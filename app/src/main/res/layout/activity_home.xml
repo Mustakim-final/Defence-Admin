@@ -14,12 +14,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_200">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="64dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/doctorProfile_ID">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Username"
-                android:layout_marginLeft="100dp"
-                android:id="@+id/userNameBar_ID">
+                android:layout_marginLeft="10dp"
+                android:id="@+id/doctorName_ID">
 
             </TextView>
         </androidx.appcompat.widget.Toolbar>
@@ -42,4 +51,5 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </androidx.viewpager.widget.ViewPager>
+
 </LinearLayout>

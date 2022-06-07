@@ -12,19 +12,19 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    /*
+
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         if (firebaseUser!=null){
-            Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+            Intent intent=new Intent(MainActivity.this,Home_Doctor_Activity.class);
             startActivity(intent);
             finish();
         }
     }
 
-     */
+
 
     Button button1,button2;
     @Override

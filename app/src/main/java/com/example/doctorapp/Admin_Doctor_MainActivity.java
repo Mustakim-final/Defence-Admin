@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.example.doctorapp.Fragment.AdminConfrim_ALLDoctorFragment;
 import com.example.doctorapp.Fragment.All_doctor_Fragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -28,6 +29,7 @@ public class Admin_Doctor_MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new All_doctor_Fragment(),"সব");
+        viewPagerAdapter.addFragment(new AdminConfrim_ALLDoctorFragment(),"কনফার্ম");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
