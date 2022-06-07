@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
@@ -7,8 +7,83 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="information"
-        android:id="@+id/doctorInformation_ID">
+        android:layout_marginTop="20dp"
+        android:id="@+id/title"
+        android:gravity="center_horizontal"
+        android:text="FInd Doctor"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/doctorProfile_ID"
+        android:layout_width="64dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/doctorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorProfile_ID"
+        android:text="name"
+        android:textSize="18sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/doctorAge"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorName"
+        android:layout_marginTop="10dp"
+        android:text="age">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/doctorGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorName"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/doctorAge"
+        android:text="gender">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="phone"
+        android:layout_below="@id/doctorAge"
+        android:layout_marginTop="10dp"
+        android:id="@+id/doctorPhone">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorPhone"
+        android:layout_marginTop="10dp"
+        android:text="Address"
+        android:id="@+id/doctorAddress">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/doctorInformation_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorAddress"
+        android:layout_marginTop="10dp"
+        android:text="information">
 
     </TextView>
 
@@ -16,9 +91,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm"
+        android:layout_below="@+id/doctorInformation_ID"
+        android:layout_marginTop="20dp"
         android:id="@+id/confirm_button_ID"
         >
 
     </Button>
 
-</LinearLayout>
+</RelativeLayout>
