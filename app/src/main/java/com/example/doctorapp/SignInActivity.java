@@ -22,7 +22,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -45,8 +47,7 @@ public class SignInActivity extends AppCompatActivity {
         goSignUp=findViewById(R.id.goSignUP_ID);
         forgotPass=findViewById(R.id.forgotPass_ID);
 
-        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
-        String userID=firebaseUser.getUid();
+
 
         goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +80,7 @@ public class SignInActivity extends AppCompatActivity {
                     passwordEditText.requestFocus();
                 }else {
                     progressBar.setVisibility(View.VISIBLE);
-                    signInUser(gmail,password,userID);
+                    signInUser(gmail,password);
                 }
             }
         });
@@ -136,18 +137,22 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    private void signInUser(String gmail, String password,String userID) {
+    private void signInUser(String gmail, String password) {
         firebaseAuth.signInWithEmailAndPassword(gmail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Intent intent=new Intent(SignInActivity.this, Doctor_WatingActivity.class);
-                    //intent.putExtra("userID",userID);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
+
                     Toast.makeText(SignInActivity.this,"Sign in successfully",Toast.LENGTH_SHORT).show();
+
+                    Intent intent=new Intent(SignInActivity.this, Home_Doctor_Activity.class);
+                    //intent.putExtra("userID",userID);
+                    //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
             }
         });
     }
+
+
 }

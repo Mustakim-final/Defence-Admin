@@ -89,8 +89,10 @@ public class Admin_confirmAdapter extends RecyclerView.Adapter<Admin_confirmAdap
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
             contextMenu.setHeaderTitle("Options");
             MenuItem setStatus=contextMenu.add(Menu.NONE,1,1,"Set Status");
+            MenuItem setDayAndTime=contextMenu.add(Menu.NONE,2,2,"Set day and Time");
 
             setStatus.setOnMenuItemClickListener(this);
+            setDayAndTime.setOnMenuItemClickListener(this);
 
 
         }
@@ -106,8 +108,10 @@ public class Admin_confirmAdapter extends RecyclerView.Adapter<Admin_confirmAdap
                 if (position!=RecyclerView.NO_POSITION){
                     switch (menuItem.getItemId()){
                         case 1:
-
                             listener.setStatus(position,userID);
+                            return true;
+                        case 2:
+                            listener.setDayAndTime(position,userID);
                             return true;
 
                     }
@@ -121,6 +125,7 @@ public class Admin_confirmAdapter extends RecyclerView.Adapter<Admin_confirmAdap
     public interface onItemClickListener{
         void onItemClick(int position);
         void setStatus(int position,String userId);
+        void setDayAndTime(int position,String userId);
     }
 
     public void setOnClickListener(onItemClickListener listener){

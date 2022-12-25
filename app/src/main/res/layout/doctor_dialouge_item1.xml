@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Doctor"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/admin_doctor_image_ID"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/title_ID"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/admin_doctor_image_ID"
+        android:layout_margin="5dp"
+        android:id="@+id/dateLayout_ID"
+        android:background="@drawable/layout_border"
+        android:layout_height="100dp">
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/saturdayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar1_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="#fff"
+                        android:text="Saturday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date1_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/sundayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar2_ID"
+                        android:layout_width="wrap_content"
+                        android:background="#fff"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:text="Sunday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date2_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/mondayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar3_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Monday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date3_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tuesDayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar4_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="#fff"
+                        android:text="Tuesday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date4_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_below="@+id/bar1_ID"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/wednesdayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar5_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Wednesday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date5_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/thursdayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar6_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Thursday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date6_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/fridayLayout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar7_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Friday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/date7_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="no date"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/dateLayout_ID"
+        android:layout_margin="5dp"
+        android:id="@+id/timeLayout_ID"
+        android:background="@drawable/layout_border"
+        android:layout_height="100dp">
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/saturday1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar8_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="#fff"
+                        android:text="Saturday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time1_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/sunday2Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar9_ID"
+                        android:layout_width="wrap_content"
+                        android:background="#fff"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:text="Sunday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time2_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/monday1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar10_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Monday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time3_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tuesDay1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar11_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="#fff"
+                        android:text="Tuesday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time4_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_below="@+id/bar1_ID"
+                        android:text="not time set"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/wednesday1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar12_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Wednesday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time5_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/thursday1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar13_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Thursday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time6_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/friday1Layout_ID"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bar14_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:layout_marginTop="13dp"
+                        android:text="Friday"
+                        android:textColor="#000"
+                        android:textSize="15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time7_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bar1_ID"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        android:text="not set time"
+                        android:textColor="#000"
+                        android:textSize="13sp">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/admin_doctor_submit_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeLayout_ID"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="update"
+        android:textSize="18sp">
+
+    </Button>
+
+
+
+</RelativeLayout>

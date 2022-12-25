@@ -29,6 +29,7 @@
         android:id="@+id/doctorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_below="@+id/doctorProfile_ID"
         android:text="name"
         android:textSize="18sp">
@@ -39,6 +40,7 @@
         android:id="@+id/doctorAge"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_below="@+id/doctorName"
         android:layout_marginTop="10dp"
         android:text="age">
@@ -61,18 +63,21 @@
         android:layout_height="wrap_content"
         android:text="phone"
         android:layout_below="@id/doctorAge"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:id="@+id/doctorPhone">
 
     </TextView>
 
     <TextView
+        android:id="@+id/doctorAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_below="@+id/doctorPhone"
+        android:visibility="gone"
         android:layout_marginTop="10dp"
-        android:text="Address"
-        android:id="@+id/doctorAddress">
+        android:text="Address">
 
     </TextView>
 
@@ -81,17 +86,38 @@
         android:id="@+id/doctorInformation_ID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_below="@+id/doctorAddress"
         android:layout_marginTop="10dp"
         android:text="information">
 
     </TextView>
 
+    <TextView
+        android:id="@+id/cv_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/doctorInformation_ID"
+        android:layout_marginTop="10dp"
+        android:text="CV: ">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/viewImage_ID"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/cv_ID"
+        android:src="@drawable/ic_baseline_image_24">
+
+    </ImageView>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm"
-        android:layout_below="@+id/doctorInformation_ID"
+        android:layout_below="@+id/viewImage_ID"
         android:layout_marginTop="20dp"
         android:id="@+id/confirm_button_ID"
         >

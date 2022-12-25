@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".AddminHealthActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/package_title"
+        android:textColor="#000"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/health_title"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:text="@string/health_title">
+
+        </TextView>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/health_titleSpinner_ID">
+
+        </Spinner>
+    </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ad_healthAppointmentDays_ID"
+        android:hint="Appointment days">
+
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ad_healthValidation_ID"
+        android:hint="Validation Duration">
+
+    </EditText>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+    </View>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Health Fees"
+        android:id="@+id/ad_healthFess_ID">
+
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/ad_submitBtn_ID">
+
+    </Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/facilities"
+        android:textSize="20sp"
+        android:textColor="#000"
+        >
+
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="__ appointments in __ month"
+        android:id="@+id/ad_appointments_ID"
+        >
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Video calling and chatting with doctor"
+        android:id="@+id/ad_videoChat_ID"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Prescription reserve on cloud"
+        android:id="@+id/ad_prescription_ID"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Share your problem at our service"
+        android:id="@+id/ad_service_ID"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/ad_getAppointment_ID"
+        android:hint="Get appointment form anywhere"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Anytime doctor"
+        android:id="@+id/ad_anyTime_ID"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/ad_submit1Btn_ID">
+
+    </Button>
+
+
+</LinearLayout>

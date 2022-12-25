@@ -3,6 +3,7 @@ package com.example.doctorapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -10,16 +11,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.doctorapp.Fragment.ChatFragment;
 import com.example.doctorapp.Fragment.PrescriptionReFragment;
-import com.example.doctorapp.Fragment.UserFragment;
+import com.example.doctorapp.Fragment.emergency_prescriptionFragment;
 import com.example.doctorapp.Model.All_Doctor;
-import com.example.doctorapp.Model.Users;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +33,11 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Home_Doctor_Activity extends AppCompatActivity {
+public class Home_Doctor_Activity extends AppCompatActivity{
+
+
+    Toolbar toolbar;
+
     CircleImageView profileImage;
     private TextView myname;
     FirebaseUser firebaseUser;
@@ -49,6 +53,13 @@ public class Home_Doctor_Activity extends AppCompatActivity {
 
         profileImage=findViewById(R.id.doctorProfile_ID);
         myname=findViewById(R.id.doctorName_ID);
+
+
+        toolbar=findViewById(R.id.d_toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
@@ -79,8 +90,8 @@ public class Home_Doctor_Activity extends AppCompatActivity {
 
         FragmentPager fragmentPager=new FragmentPager(getSupportFragmentManager());
 
-        fragmentPager.addFragment(new PrescriptionReFragment(),"প্রেসক্রিপশন");
-        fragmentPager.addFragment(new UserFragment(),"user");
+        fragmentPager.addFragment(new PrescriptionReFragment(),"জেনারেল প্রেসক্রিপশন");
+        fragmentPager.addFragment(new emergency_prescriptionFragment(),"ইমারজেন্সি প্রেসক্রিপশন");
         fragmentPager.addFragment(new ChatFragment(),"প্রোফাইল");
 
         viewPager.setAdapter(fragmentPager);
@@ -90,13 +101,14 @@ public class Home_Doctor_Activity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.sign_out,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.logout_ID){
+        if (item.getItemId()==R.id.doctor_logout_ID){
             firebaseAuth=FirebaseAuth.getInstance();
             firebaseAuth.signOut();
             finish();
@@ -104,6 +116,7 @@ public class Home_Doctor_Activity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     class FragmentPager extends FragmentPagerAdapter{
         private ArrayList<Fragment> fragments;

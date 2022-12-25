@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doctorapp.Em_Presctiption_detailsActivity;
 import com.example.doctorapp.MessageWithPatientMainActivity;
-import com.example.doctorapp.Model.Users;
+import com.example.doctorapp.Model.Emergency_prescription;
 import com.example.doctorapp.R;
 
 import java.util.List;
@@ -19,12 +20,12 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewAdapter> {
 
     Context context;
-    List<Users> usersList;
+    List<Emergency_prescription> emergency_prescriptionList;
     String userID;
 
-    public UserAdapter(Context context, List<Users> usersList) {
+    public UserAdapter(Context context, List<Emergency_prescription> emergency_prescriptionList) {
         this.context = context;
-        this.usersList = usersList;
+        this.emergency_prescriptionList = emergency_prescriptionList;
     }
 
     @NonNull
@@ -36,17 +37,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewAdapter> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewAdapter holder, int position) {
-        Users users=usersList.get(position);
+        Emergency_prescription emergency_prescription=emergency_prescriptionList.get(position);
 
-        userID=users.getId();
-        holder.textView.setText(users.getUsername());
+        userID=emergency_prescription.getMyID();
+        holder.textView.setText(emergency_prescription.getName());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return usersList.size();
+        return emergency_prescriptionList.size();
     }
 
     public class ViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -59,10 +60,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewAdapter> {
 
         @Override
         public void onClick(View v) {
-            Users users=usersList.get(getAdapterPosition());
-            userID=users.getId();
+            Emergency_prescription emergency_prescription=emergency_prescriptionList.get(getAdapterPosition());
 
-            Intent intent=new Intent(context, MessageWithPatientMainActivity.class);
+            userID=emergency_prescription.getMyID();
+
+            Intent intent=new Intent(context, Em_Presctiption_detailsActivity.class);
             intent.putExtra("userID",userID);
             context.startActivity(intent);
         }

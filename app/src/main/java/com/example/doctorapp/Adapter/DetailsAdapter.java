@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,11 +50,11 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder
 
         All_Doctor all_doctor=all_doctorList.get(position);
 
-        holder.nameText.setText(all_doctor.getName());
-        holder.ageText.setText(all_doctor.getAge());
-        holder.genderText.setText(all_doctor.getGender());
-        holder.phoneText.setText(all_doctor.getPhone());
-        holder.addressText.setText(all_doctor.getAddress());
+        holder.nameText.setText("Name: "+all_doctor.getName());
+        holder.ageText.setText("Age: "+all_doctor.getAge());
+        holder.genderText.setText("Gender: "+all_doctor.getGender());
+        holder.phoneText.setText("Phone: "+all_doctor.getPhone());
+        //holder.addressText.setText(all_doctor.getAddress());
 
         holder.informationText.setText(all_doctor.getInformation());
 
@@ -62,6 +63,13 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder
 
         }else {
             Glide.with(context).load(all_doctor.getImageUrl()).into(holder.circleImageView);
+        }
+
+        if (all_doctor.getImagePost().equals("imagePost")){
+            holder.imageView.setVisibility(View.GONE);
+
+        }else {
+            Glide.with(context).load(all_doctor.getImagePost()).into(holder.imageView);
         }
 
     }
@@ -73,6 +81,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder
 
     public class MyHolder extends RecyclerView.ViewHolder{
         CircleImageView circleImageView;
+        ImageView imageView;
         TextView informationText,nameText,ageText,genderText,phoneText,addressText;
         Button conBtn;
         public MyHolder(@NonNull View itemView) {
@@ -83,6 +92,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.MyHolder
             genderText=itemView.findViewById(R.id.doctorGender);
             phoneText=itemView.findViewById(R.id.doctorPhone);
             addressText=itemView.findViewById(R.id.doctorAddress);
+            imageView=itemView.findViewById(R.id.viewImage_ID);
 
             informationText=itemView.findViewById(R.id.doctorInformation_ID);
             conBtn=itemView.findViewById(R.id.confirm_button_ID);

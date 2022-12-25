@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.doctorapp.Adapter.PatientAdapter;
+import com.example.doctorapp.Model.General;
 import com.example.doctorapp.Model.Users;
 import com.example.doctorapp.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +31,7 @@ public class PrescriptionReFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    List<Users> patientList;
+    List<General> generalList;
     PatientAdapter patientAdapter;
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -40,33 +41,37 @@ public class PrescriptionReFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_prescription_re, container, false);
 
+        firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        String myId=firebaseUser.getUid();
+
         recyclerView=view.findViewById(R.id.prescriptionRecycler_ID);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        patientList=new ArrayList<>();
+        generalList=new ArrayList<>();
 
-        readPatitent();
+        readPatitent(myId);
         return view;
     }
 
-    private void readPatitent() {
-        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("Serial");
+    private void readPatitent(String myId) {
+        reference= FirebaseDatabase.getInstance().getReference("general prescription");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                patientList.clear();
+                generalList.clear();
 
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    Users users=dataSnapshot.getValue(Users.class);
+                    General general=dataSnapshot.getValue(General.class);
 
-                    if (!users.getId().equals(firebaseUser.getUid())){
-                        patientList.add(users);
+                    if (general.getD_id().equals(myId)){
+                        generalList.add(general);
                     }
+
+
                 }
 
-                patientAdapter=new PatientAdapter(getContext(),patientList);
+                patientAdapter=new PatientAdapter(getContext(),generalList);
                 recyclerView.setAdapter(patientAdapter);
             }
 

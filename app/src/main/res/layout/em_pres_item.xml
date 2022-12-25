@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/em_nameSerial_ID"
+        android:textSize="25sp"
+        android:hint="Name...">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address: "
+        android:textStyle="bold"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="136dp">
+
+        <TextView
+            android:id="@+id/em_districtSerial_ID"
+            android:layout_width="205dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:hint="District..."
+            android:padding="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/em_subdistrictSerial_ID"
+            android:layout_width="match_parent"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/em_districtSerial_ID"
+
+            android:hint="Sub District..."
+            android:padding="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/em_localSerial_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em_districtSerial_ID"
+            android:layout_marginBottom="-60dp"
+            android:hint="Local Address "
+            android:padding="10dp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:id="@+id/em_illnessSerial_ID"
+        android:hint="Description of illness...">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:id="@+id/em_phoneSerial_ID"
+        android:hint="Phone Number..">
+
+    </TextView>
+
+
+
+
+</LinearLayout>

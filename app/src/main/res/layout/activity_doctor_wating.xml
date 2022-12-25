@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Doctor_WatingActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_margin="20dp"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:id="@+id/textApply"
+        android:text="@string/doctor_apply"
+        android:textColor="#CF1D1D"
+        android:layout_marginTop="50dp">
+
+    </TextView>
 
 </LinearLayout>

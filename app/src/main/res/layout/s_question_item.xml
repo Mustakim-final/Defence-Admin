@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_margin="10dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/s_questionProfileImage_ID"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/ic_launcher">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/s_questionName_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/s_questionProfileImage_ID"
+                android:text="Name">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/s_questionType_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/s_questionName_ID"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/s_questionProfileImage_ID"
+                android:text="type">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/s_question_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/s_questionProfileImage_ID"
+                android:layout_marginTop="20dp"
+                android:text="question">
+
+            </TextView>
+
+
+            <ImageView
+                android:id="@+id/s_questionPhoto"
+                android:layout_width="390dp"
+                android:layout_height="390dp"
+                android:layout_below="@+id/s_question_ID"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_baseline_insert_photo_24">
+
+            </ImageView>
+
+
+            <ImageButton
+                android:id="@+id/s_questionCommentBtn_ID"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/s_questionPhoto"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="40dp"
+                android:background="#fff"
+                android:src="@drawable/ic_baseline_comment_24">
+
+            </ImageButton>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

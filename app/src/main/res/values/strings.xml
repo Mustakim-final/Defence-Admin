@@ -1,8 +1,82 @@
 <resources>
-    <string name="app_name">DoctorApp</string>
+    <string name="app_name">Dr.App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="open">open</string>
     <string name="close">close</string>
+
+    <string-array name="doctor_type">
+        <item>None</item>
+        <item>covid</item>
+        <item>Heart disease</item>
+        <item>Piles</item>
+        <item>Dentist</item>
+        <item>Dermatologist</item>
+        <item>Diabetes and hormones</item>
+        <item>Nose, ear and throat specialist</item>
+        <item>Ophthalmologist</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="prescription_type">
+        <item>None</item>
+        <item>Text</item>
+        <item>Image/PDF</item>
+    </string-array>
+
+    <string name="em_info">প্রেসক্রিপসশন লিখুনঃ</string>
+    <string name="em_info1">প্রেসক্রিপসশন ছবি অথবা পিডিফ দিনঃ</string>
+
+    <string name="em_info2">ছবি/পিডিফঃ</string>
+
+    <string name="package_title">প্যাকেজ টাইটেল সেট করুনঃ</string>
+
+    <string name="facilities">সুযোগ-সুবিধা সেট করুনঃ</string>
+
+    <string name="health_title">হেল্‌থ ক্যাটাগরী সিলেক্ট করুনঃ</string>
+    <string-array name="health_type">
+        <item>শাপলা</item>
+        <item>গোলাপ</item>
+        <item>প্রজাপতি</item>
+        <item>রজনীগন্ধা</item>
+        <item>জেসমিন</item>
+    </string-array>
+
+    <string name="product_name">প্রোডাক্ট নেইমঃ</string>
+    <string name="product_image">ছবি সিলেক্ট করুনঃ</string>
+
+    <string name="hospital_info">হাসপাতাল সম্পর্কে তথ্য দিনঃ</string>
+    <string name="ambulance_info">অ্যাম্বুলেন্স সম্পর্কে তথ্য দিনঃ</string>
+    <string name="diagnostic_info">ডায়াগনস্টিক সম্পর্কে তথ্য দিনঃ</string>
+
+    <string-array name="blog_type">
+        <item>Gyn and Obs</item>
+        <item>ত্বক ও এলার্জি</item>
+        <item>Colorectal surgery</item>
+        <item>মেডিসিন</item>
+        <item>National</item>
+        <item>Ent</item>
+        <item>Child doctor</item>
+        <item>Eye</item>
+        <item>অর্থোপেডিক চিকিৎসা</item>
+        <item>টিউটেরিয়াল</item>
+    </string-array>
+
+    <string name="doctor_apply">আপনার আবেদন প্রক্রিয়াধীন অবস্থায় আছে।দয়া করে অপেক্ষা করুণ।</string>
+    <string name="pharmacy_list">ফার্মেসী তালিকা</string>
+    <string-array name="category">
+        <item>Category</item>
+        <item>Medicine</item>
+        <item>Others</item>
+        <item>Surgical</item>
+        <item>Oxygen</item>
+        <item>Baby Products</item>
+        <item>Medical equipment</item>
+    </string-array>
 </resources>

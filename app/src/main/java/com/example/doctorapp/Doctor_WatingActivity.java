@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.doctorapp.Model.All_Doctor;
@@ -20,62 +21,29 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Doctor_WatingActivity extends AppCompatActivity {
 
-    ProgressBar progressBar;
-    int progress;
-    Intent intent;
-
+    TextView textView;
     DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_wating);
 
-        /*
-        intent=getIntent();
-        String userId=intent.getStringExtra("userID");
-
-         */
+        textView=findViewById(R.id.textApply);
 
         FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
         String userID=firebaseUser.getUid();
 
-        Toast.makeText(Doctor_WatingActivity.this,""+userID,Toast.LENGTH_LONG).show();
-
-        progressBar=findViewById(R.id.progressBar_ID);
-
-        /*
-        Thread thread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
-
-        thread.run();
-
-         */
-
-        //progressBar.setVisibility(View.GONE);
-
-        doWork(userID);
-    }
-
-
-
-    private void doWork(String userId) {
-
-        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-
-        reference= FirebaseDatabase.getInstance().getReference("Doctor List").child(userId);
+        reference= FirebaseDatabase.getInstance().getReference("Doctor List").child(userID);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 All_Doctor all_doctor=snapshot.getValue(All_Doctor.class);
-                if (all_doctor.getStatus().equals("status")){
-                    //progressBar.setVisibility(View.VISIBLE);
-                }else{
+                if (all_doctor.getStatus().equals("yes")){
                     Intent intent=new Intent(Doctor_WatingActivity.this,Home_Doctor_Activity.class);
                     startActivity(intent);
+                    finish();
+                }else{
+
                 }
             }
 
@@ -85,9 +53,6 @@ public class Doctor_WatingActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
-
 
 }

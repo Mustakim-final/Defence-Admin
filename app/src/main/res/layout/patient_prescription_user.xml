@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:id="@+id/doctorImg_ID"
-        android:src="@mipmap/ic_launcher_round">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:id="@+id/patientImage"
+            android:src="@mipmap/ic_launcher_round">
 
-    </de.hdodenhof.circleimageview.CircleImageView>
+        </de.hdodenhof.circleimageview.CircleImageView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:layout_toRightOf="@+id/doctorImg_ID"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/patient_userName_ID"
-        android:layout_toEndOf="@id/doctorImg_ID"
-        android:layout_centerVertical="true">
-    </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:layout_toRightOf="@+id/patientImage"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/patientName"
+            android:layout_toEndOf="@id/patientImage"
+            android:layout_centerVertical="true">
+        </TextView>
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:id="@+id/messageBtn_ID"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_message_24"
+            >
+
+        </ImageView>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
