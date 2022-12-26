@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignInActivity">
+    tools:context=".Others_RegActivity">
 
     <include
         android:id="@+id/tool_bar_ID"
         layout="@layout/bar_layout">
 
     </include>
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -28,52 +27,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:text="FInd Doctor">
-
-            </TextView>
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
             </TextView>
 
-            <LinearLayout
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="User Type: ">
+                android:hint="user name"
+                android:layout_marginTop="20dp"
+                android:id="@+id/regUsername_ID">
 
-                </TextView>
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/userType_ID">
-
-                </Spinner>
-            </LinearLayout>
-
-
+            </com.rengwuxian.materialedittext.MaterialEditText>
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/signEmail_ID"
+                android:id="@+id/regEmail_ID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -83,7 +57,7 @@
             </com.rengwuxian.materialedittext.MaterialEditText>
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/signPassword_ID"
+                android:id="@+id/regPassword_ID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -92,41 +66,30 @@
 
             </com.rengwuxian.materialedittext.MaterialEditText>
 
+
             <Button
-                android:id="@+id/signSubmit_ID"
+                android:id="@+id/regSubmit_ID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#BE2DD6"
                 android:layout_marginTop="20dp"
                 android:text="submit">
 
             </Button>
 
             <TextView
-                android:id="@+id/goSignUP_ID"
+                android:id="@+id/goSignIn_ID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="Are You not sign Up? go to sign up"
+                android:text="Are You Already sign Up? go to sign in"
                 android:textSize="15sp"
                 android:textStyle="bold">
 
             </TextView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:id="@+id/forgotPass_ID">
-
-            </TextView>
-
             <ProgressBar
-                android:id="@+id/signProgressbar_ID"
+                android:id="@+id/regProgressbar_ID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

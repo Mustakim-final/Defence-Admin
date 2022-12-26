@@ -252,6 +252,9 @@ public class RegActivity extends AppCompatActivity {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 Toast.makeText(RegActivity.this,"Registration successfully done",Toast.LENGTH_SHORT).show();
+
+                                firebaseAuth=FirebaseAuth.getInstance();
+                                firebaseAuth.signOut();
                             }
                         });
 
@@ -293,6 +296,9 @@ public class RegActivity extends AppCompatActivity {
                                                 Intent intent=new Intent(RegActivity.this, SignInActivity.class);
                                                 startActivity(intent);
                                                 Toast.makeText(RegActivity.this,"Registration successfully done",Toast.LENGTH_SHORT).show();
+
+                                                firebaseAuth=FirebaseAuth.getInstance();
+                                                firebaseAuth.signOut();
                                             }
                                         });
 

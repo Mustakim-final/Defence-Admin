@@ -16,9 +16,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/main_icon"
         android:label="@string/app_name"
-        android:name=".SetNotification.NotificationExr"
+
         android:roundIcon="@mipmap/main_icon_round"
         android:supportsRtl="true"
+        android:name=".SetNotification.NotificationExr"
         android:theme="@style/Theme.DoctorApp">
         <activity
             android:name=".AppointmentActivity"
@@ -81,7 +82,7 @@
             android:name=".AdminHomePageActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin_LoginActivity"
+            android:name=".Others_RegActivity"
             android:exported="false" />
         <activity
             android:name=".AdminSignInActivity"
@@ -89,12 +90,18 @@
         <activity
             android:name=".Main_Home_Activity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <service android:name=".SetNotification.MyFirebaseMessaging"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".MessageWithPatientMainActivity"
             android:exported="false" />
@@ -109,16 +116,16 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-
-        <service android:name=".SetNotification.MyFirebaseMessaging"
-            android:exported="false"
-            >
+            android:exported="true" >
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </service>
+
+        </activity>
+
+
 
     </application>
 
