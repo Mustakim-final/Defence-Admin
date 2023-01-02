@@ -8,7 +8,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,10 +29,13 @@ public class MainActivity extends AppCompatActivity{
 
     Button button1,button2;
     Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         onConnection();
     }
@@ -46,7 +52,6 @@ public class MainActivity extends AppCompatActivity{
 //            if (info.getType()==ConnectivityManager.TYPE_MOBILE){
 //                Toast.makeText(StartActivity.this,"আপনি মোবাইল ডাটা ব্যাবহার করছেন",Toast.LENGTH_SHORT).show();
 //            }
-
 
             timer=new Timer();
             timer.schedule(new TimerTask() {

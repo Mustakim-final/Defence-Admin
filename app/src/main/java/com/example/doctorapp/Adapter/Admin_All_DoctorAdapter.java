@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -73,6 +74,7 @@ public class Admin_All_DoctorAdapter extends RecyclerView.Adapter<Admin_All_Doct
         public void onClick(View v) {
             All_Doctor users=all_doctorList.get(getAdapterPosition());
             userID=users.getId();
+
 
             Intent intent=new Intent(context, Admin_allDoctor_detailsActivity.class);
             intent.putExtra("userID",userID);

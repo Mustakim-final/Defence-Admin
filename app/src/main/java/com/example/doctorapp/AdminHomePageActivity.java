@@ -1,20 +1,33 @@
 package com.example.doctorapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminHomePageActivity extends AppCompatActivity {
     CardView doctorCard,productCard,postCard,healthCard,hospitalCard,ambulanceCard,diagnosticCard;
     CardView pharmacyCard,suggestionCard,blogCard;
+    FirebaseAuth firebaseAuth;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home_page);
+
+        toolbar=findViewById(R.id.d_toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         doctorCard=findViewById(R.id.doctorCard_ID);
         productCard=findViewById(R.id.productCard_ID);
@@ -26,6 +39,8 @@ public class AdminHomePageActivity extends AppCompatActivity {
         pharmacyCard=findViewById(R.id.pharmacyCard_ID);
         suggestionCard=findViewById(R.id.suggestionCard_ID);
         blogCard=findViewById(R.id.blogCard);
+
+        firebaseAuth=FirebaseAuth.getInstance();
 
         doctorCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,5 +121,23 @@ public class AdminHomePageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sign_out,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId()==R.id.doctor_logout_ID){
+            firebaseAuth= FirebaseAuth.getInstance();
+            firebaseAuth.signOut();
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

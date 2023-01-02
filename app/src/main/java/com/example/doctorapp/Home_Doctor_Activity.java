@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -149,5 +150,24 @@ public class Home_Doctor_Activity extends AppCompatActivity{
             return titles.get(position);
         }
     }
+
+//    private void Status(String status){
+//        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Doctor List").child(firebaseUser.getUid());
+//        HashMap<String,Object> hashMap=new HashMap<>();
+//        hashMap.put("username",status);
+//        reference.updateChildren(hashMap);
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        Status("online");
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        Status("offline");
+//    }
 
 }

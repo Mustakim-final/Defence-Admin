@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -38,7 +40,7 @@ public class SignInActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     DatabaseReference reference;
-    final static int Admin=1;
+    int Admin;
     private String[] userType;
     Spinner spinnerUserType;
     @Override
@@ -65,7 +67,9 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 if (position==0){
-
+                    //
+                }else if (position==1){
+                    Admin=position;
                     goSignUp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -99,8 +103,8 @@ public class SignInActivity extends AppCompatActivity {
                             }
                         }
                     });
-
-                }else if (position==1){
+                }else if (position==2){
+                    Admin=position;
                     goSignUp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -130,6 +134,7 @@ public class SignInActivity extends AppCompatActivity {
                                 passwordEditText.requestFocus();
                             }else {
                                 progressBar.setVisibility(View.VISIBLE);
+
                                 signInUser(gmail,password);
                             }
                         }
@@ -208,6 +213,11 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=preferences.edit();
+                    editor.putString("key1","admin");
+                    editor.commit();
+
                     Toast.makeText(SignInActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -222,9 +232,12 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=preferences.edit();
+                    editor.putString("key2","doctor");
+                    editor.commit();
 
                     Toast.makeText(SignInActivity.this,"Sign in successfully",Toast.LENGTH_SHORT).show();
-
                     Intent intent=new Intent(SignInActivity.this, Home_Doctor_Activity.class);
                     //intent.putExtra("userID",userID);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -235,15 +248,37 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+
+
+
+        @Override
     protected void onStart() {
+        SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
+//        String admin=preferences.getString("key1","admin");
+//        String doctor=preferences.getString("key2","doctor");
+
+        String admin=spinnerUserType.toString();
+
         super.onStart();
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+//        if (firebaseUser!=null && Admin==1){
+//            Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }else if (firebaseUser!=null){
+//            Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
+//            startActivity(intent);
+//            finish();
+//        }
+
         if (firebaseUser!=null){
-            Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
+            Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
             startActivity(intent);
             finish();
         }
+
+
+
     }
 
 }
