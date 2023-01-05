@@ -157,7 +157,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                notify=true;
-               senPresImage(myID,userID);
+               senPresImage(currentDate,myID,userID);
            }
        });
 
@@ -215,7 +215,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(imageUri));
     }
 
-    private void senPresImage(String myID, String userID) {
+    private void senPresImage(String currentDate,String myID, String userID) {
         if (imageUri==null){
             Toast.makeText(this,"please select a image!!!",Toast.LENGTH_SHORT).show();
         }else {
@@ -251,6 +251,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
                                     hashMap.put("img_pres",imageUri);
                                     hashMap.put("information",info);
                                     hashMap.put("day",day);
+                                    hashMap.put("date",currentDate);
                                     hashMap.put("myId",myID);
                                     hashMap.put("userId",userID);
 
