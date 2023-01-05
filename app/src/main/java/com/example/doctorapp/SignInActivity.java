@@ -56,97 +56,46 @@ public class SignInActivity extends AppCompatActivity {
         progressBar=findViewById(R.id.signProgressbar_ID);
         goSignUp=findViewById(R.id.goSignUP_ID);
         forgotPass=findViewById(R.id.forgotPass_ID);
-        spinnerUserType=findViewById(R.id.userType_ID);
+
 
         firebaseAuth=FirebaseAuth.getInstance();
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(SignInActivity.this,R.layout.reg_spinner_item,R.id.spinner_text,userType);
-        spinnerUserType.setAdapter(adapter);
-
-        spinnerUserType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                if (position==0){
-                    //
-                }else if (position==1){
-                    Admin=position;
-                    goSignUp.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent=new Intent(SignInActivity.this,Others_RegActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-
-                    button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String gmail=gmailEditText.getText().toString().trim();
-                            String password=passwordEditText.getText().toString().trim();
-
-
-                            if (gmail.isEmpty()){
-                                gmailEditText.setError("Enter Gmail !!");
-                                gmailEditText.requestFocus();
-                            }else if (!Patterns.EMAIL_ADDRESS.matcher(gmail).matches()){
-                                gmailEditText.setError("Enter Valid gmail !!");
-                                gmailEditText.requestFocus();
-                            }else if (password.isEmpty()){
-                                passwordEditText.setError("Enter Password !!");
-                                passwordEditText.requestFocus();
-                            }else if (password.length()<6){
-                                passwordEditText.setError("Enter 6 digit password !!");
-                                passwordEditText.requestFocus();
-                            }else {
-                                progressBar.setVisibility(View.VISIBLE);
-                                signInAdmin(gmail,password);
-                            }
-                        }
-                    });
-                }else if (position==2){
-                    Admin=position;
-                    goSignUp.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent=new Intent(SignInActivity.this,RegActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-
-                    button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String gmail=gmailEditText.getText().toString().trim();
-                            String password=passwordEditText.getText().toString().trim();
-
-
-                            if (gmail.isEmpty()){
-                                gmailEditText.setError("Enter Gmail !!");
-                                gmailEditText.requestFocus();
-                            }else if (!Patterns.EMAIL_ADDRESS.matcher(gmail).matches()){
-                                gmailEditText.setError("Enter Valid gmail !!");
-                                gmailEditText.requestFocus();
-                            }else if (password.isEmpty()){
-                                passwordEditText.setError("Enter Password !!");
-                                passwordEditText.requestFocus();
-                            }else if (password.length()<6){
-                                passwordEditText.setError("Enter 6 digit password !!");
-                                passwordEditText.requestFocus();
-                            }else {
-                                progressBar.setVisibility(View.VISIBLE);
-
-                                signInUser(gmail,password);
-                            }
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(View view) {
+                Intent intent=new Intent(SignInActivity.this,RegActivity.class);
+                startActivity(intent);
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String gmail=gmailEditText.getText().toString().trim();
+                String password=passwordEditText.getText().toString().trim();
+
+
+                if (gmail.isEmpty()){
+                    gmailEditText.setError("Enter Gmail !!");
+                    gmailEditText.requestFocus();
+                }else if (!Patterns.EMAIL_ADDRESS.matcher(gmail).matches()){
+                    gmailEditText.setError("Enter Valid gmail !!");
+                    gmailEditText.requestFocus();
+                }else if (password.isEmpty()){
+                    passwordEditText.setError("Enter Password !!");
+                    passwordEditText.requestFocus();
+                }else if (password.length()<6){
+                    passwordEditText.setError("Enter 6 digit password !!");
+                    passwordEditText.requestFocus();
+                }else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    signInAdmin(gmail,password);
+                }
+            }
+        });
+
+
+
 
 
 
@@ -213,13 +162,9 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
-                    SharedPreferences.Editor editor=preferences.edit();
-                    editor.putString("key1","admin");
-                    editor.commit();
 
                     Toast.makeText(SignInActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
+                    Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
@@ -227,49 +172,17 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-    private void signInUser(String gmail, String password) {
-        firebaseAuth.signInWithEmailAndPassword(gmail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
-                    SharedPreferences.Editor editor=preferences.edit();
-                    editor.putString("key2","doctor");
-                    editor.commit();
 
-                    Toast.makeText(SignInActivity.this,"Sign in successfully",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(SignInActivity.this, Home_Doctor_Activity.class);
-                    //intent.putExtra("userID",userID);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-
-                }
-            }
-        });
-    }
 
 
 
 
         @Override
     protected void onStart() {
-        SharedPreferences preferences=getSharedPreferences("user_type",MODE_PRIVATE);
-//        String admin=preferences.getString("key1","admin");
-//        String doctor=preferences.getString("key2","doctor");
 
-        String admin=spinnerUserType.toString();
 
         super.onStart();
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-//        if (firebaseUser!=null && Admin==1){
-//            Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }else if (firebaseUser!=null){
-//            Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
-//            startActivity(intent);
-//            finish();
-//        }
 
         if (firebaseUser!=null){
             Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);

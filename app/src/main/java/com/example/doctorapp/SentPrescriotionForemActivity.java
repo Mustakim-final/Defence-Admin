@@ -54,6 +54,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import retrofit2.Call;
@@ -75,7 +78,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
 
-    DatabaseReference reference;
+    DatabaseReference reference,reference1;
     FirebaseUser firebaseUser;
 
     private Uri imageUri=null;
@@ -113,6 +116,9 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
         imageButton=findViewById(R.id.em_image_ID);
         presBtn1=findViewById(R.id.em_presSent1_ID);
         presBtn2=findViewById(R.id.em_presSent_ID);
+        Calendar calendar=Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MMM-yyyy"+"/"+"hh:mm:ss");
+        String currentDate= simpleDateFormat.format(calendar.getTime());
 
 
        presType.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -143,7 +149,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
                notify=true;
                String prescription=presEdit.getText().toString().trim();
                String meet=meetLinkEdit.getText().toString().trim();
-               sentPres(prescription,meet,myID,userID);
+               sentPres(currentDate,prescription,meet,myID,userID);
            }
        });
 
@@ -302,7 +308,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
         });
     }
 
-    private void sentPres(String prescription, String meet, String myID, String userID) {
+    private void sentPres(String currentDate,String prescription, String meet, String myID, String userID) {
 
         /*
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -322,6 +328,8 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
                 String info=all_doctor.getInformation();
                 String day=all_doctor.getDay();
 
+
+
                 reference=FirebaseDatabase.getInstance().getReference();
                 HashMap<String,Object> hashMap=new HashMap<>();
                 hashMap.put("prescription",prescription);
@@ -330,6 +338,7 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
                 hashMap.put("information",info);
                 hashMap.put("day",day);
                 hashMap.put("meet",meet);
+                hashMap.put("date",currentDate);
                 hashMap.put("myId",myID);
                 hashMap.put("userId",userID);
 
@@ -362,8 +371,8 @@ public class SentPrescriotionForemActivity extends AppCompatActivity {
                 });
 
         final String msg="Sent Prescription";
-        reference=FirebaseDatabase.getInstance().getReference("Doctor List").child(firebaseUser.getUid());
-        reference.addValueEventListener(new ValueEventListener() {
+        reference1=FirebaseDatabase.getInstance().getReference("Doctor List").child(firebaseUser.getUid());
+        reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Users users=snapshot.getValue(Users.class);
