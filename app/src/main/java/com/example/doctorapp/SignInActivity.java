@@ -164,7 +164,7 @@ public class SignInActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
 
                     Toast.makeText(SignInActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
+                    Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
@@ -185,7 +185,7 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser!=null){
-            Intent intent=new Intent(SignInActivity.this,Home_Doctor_Activity.class);
+            Intent intent=new Intent(SignInActivity.this,AdminHomePageActivity.class);
             startActivity(intent);
             finish();
         }

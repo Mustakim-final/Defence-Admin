@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.doctorapp.Model.Pharmacy;
+import com.example.doctorapp.PharmacyFromActivity;
 import com.example.doctorapp.R;
 
 
@@ -75,12 +76,18 @@ public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.MyHold
 
         @Override
         public void onClick(View view) {
-            if (listener!=null){
-                int position=getAdapterPosition();
-                if (position!=RecyclerView.NO_POSITION){
-                    listener.selected(position);
-                }
-            }
+            Pharmacy pharmacy=pharmacyList.get(getAdapterPosition());
+            String phrname=pharmacy.getTitle();
+
+            Intent intent=new Intent(context, PharmacyFromActivity.class);
+            intent.putExtra("phrname",phrname);
+            context.startActivity(intent);
+//            if (listener!=null){
+//                int position=getAdapterPosition();
+//                if (position!=RecyclerView.NO_POSITION){
+//                    listener.selected(position);
+//                }
+//            }
         }
 
         @Override
